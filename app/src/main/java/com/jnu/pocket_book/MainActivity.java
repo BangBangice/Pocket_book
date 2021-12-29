@@ -22,7 +22,7 @@ import com.jnu.pocket_book.adapter.AccountAdapter;
 import com.jnu.pocket_book.db.AccountBean;
 import com.jnu.pocket_book.db.DBManager;
 import com.jnu.pocket_book.utils.BudgetDialog;
-//import com.jnu.pocket_book.utils.MoreDialog;
+import com.jnu.pocket_book.utils.MoreDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -178,11 +178,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent it1 = new Intent(this, RecordActivity.class);  //跳转界面
                 startActivity(it1);
                 break;
-//            case R.id.main_btn_more:
-//                MoreDialog moreDialog = new MoreDialog(this);
-//                moreDialog.show();
-//                moreDialog.setDialogSize();
-//                break;
+            case R.id.main_btn_more:
+                MoreDialog moreDialog = new MoreDialog(this);
+                moreDialog.show();
+                moreDialog.setDialogSize();
+                break;
             case R.id.item_mainlv_top_tv_budget:
                 showBudgetDialog();
                 break;
