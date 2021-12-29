@@ -11,7 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <!-- copy-->
-    <string name="editone">记一笔...</string>
+    <string name="editone">记账</string>
     <string name="month_out">本月支出</string>
     <string name="out">支出</string>
     <string name="month_in">本月收入</string>
