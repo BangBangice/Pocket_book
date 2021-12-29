@@ -9,11 +9,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/dialog_more_btn_about"
-            style="@style/dialogmoreStyle"
-            android:drawableTop="@mipmap/it_guanyu"
-            android:text="@string/about"/>
-        <Button
             android:id="@+id/dialog_more_btn_setting"
             style="@style/dialogmoreStyle"
             android:drawableTop="@mipmap/it_shezhi"
