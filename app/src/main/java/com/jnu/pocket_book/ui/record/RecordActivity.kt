@@ -17,12 +17,11 @@ class RecordActivity : AppCompatActivity() {
         initPager()
     }
 
+
+
     private fun initPager() {
         //初始化viewpager页面的集合
-        val fragmentList:ArrayList<Fragment>
-        //收入和支出，放在fragment中
-//        val outFrag:OutcomeFragment=OutcomeFragment
-//        val inFrag:IncomeFragment=IncomeFragment
+
         val viewPagerFragments = findViewById<ViewPager2>(R.id.record_vp)
         viewPagerFragments.adapter = MyFragmentAdpater(this)
 
