@@ -6,15 +6,16 @@ import android.text.InputType
 import android.view.View
 import android.widget.EditText
 import com.jnu.pocket_book.R
-import com.jnu.pocket_book.ui.utils.KeyBoardUtils.listener as listener1
 
 class KeyBoardUtils(val keyboardView: KeyboardView,val editText: EditText) {
     interface OnEnsureListener{
         fun onEnsure()
-
     }
-    lateinit var onEnsureListener:OnEnsureListener
+    lateinit var onEnsureListener2:OnEnsureListener
 
+    fun setOnEnsureListener(onEnsureListener: OnEnsureListener){
+        onEnsureListener2=onEnsureListener
+    }
     init {
         editText.setInputType(InputType.TYPE_NULL)  //取消弹出系统键盘
         val k1 = Keyboard(this.editText.context, R.xml.key)  //我们的键盘
@@ -27,6 +28,7 @@ class KeyBoardUtils(val keyboardView: KeyboardView,val editText: EditText) {
             setOnKeyboardActionListener(listener())
         }  //键盘被点击的监听
     }
+
     inner class listener:KeyboardView.OnKeyboardActionListener {
         override fun onPress(p0: Int) {
             TODO("Not yet implemented")
@@ -45,7 +47,7 @@ class KeyBoardUtils(val keyboardView: KeyboardView,val editText: EditText) {
                         if(start>0)
                             editable.delete(start-1,start)
                 Keyboard.KEYCODE_CANCEL->editable.clear()
-                Keyboard.KEYCODE_DONE->onEnsureListener.onEnsure()
+                Keyboard.KEYCODE_DONE->onEnsureListener2.onEnsure()
 
                 else -> editable.insert(start,p0 as String) //数字键，直接进行显示
             }
@@ -84,6 +86,10 @@ class KeyBoardUtils(val keyboardView: KeyboardView,val editText: EditText) {
         val visibility:Int=keyboardView.visibility
         if(visibility==View.VISIBLE||visibility==View.INVISIBLE)
             keyboardView.setVisibility(View.GONE)
+    }
+
+    fun onEnsureListener(value: () -> Unit) {
+
     }
 
 }

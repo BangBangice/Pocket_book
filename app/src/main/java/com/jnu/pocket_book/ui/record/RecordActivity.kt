@@ -1,14 +1,11 @@
 package com.jnu.pocket_book.ui.record
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
-import com.jnu.pocket_book.MainActivity
 import com.jnu.pocket_book.R
 
 class RecordActivity : AppCompatActivity() {
@@ -27,14 +24,14 @@ class RecordActivity : AppCompatActivity() {
 //        val outFrag:OutcomeFragment=OutcomeFragment
 //        val inFrag:IncomeFragment=IncomeFragment
         val viewPagerFragments = findViewById<ViewPager2>(R.id.record_vp)
-       // viewPagerFragments.adapter = MyFragmentAdpater(this)
+        viewPagerFragments.adapter = MyFragmentAdpater(this)
 
         val tabLayoutHeader = findViewById<TabLayout>(R.id.record_tabs)
         val tabLayoutMediator = TabLayoutMediator(
             tabLayoutHeader, viewPagerFragments
         ) { tab, position ->
-            if (position == 0) tab.text = "图书"
-            else if (position == 1) tab.text = "新闻"
+            if (position == 0) tab.text = "支出"
+            else if (position == 1) tab.text = "收入"
         }
         tabLayoutMediator.attach()
     }
