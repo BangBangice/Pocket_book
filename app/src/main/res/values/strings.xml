@@ -24,4 +24,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="not_data">暂无数据</string>
+    <string name="set_item">历史记录</string>
+    <string name="show_detail">账单详情</string>
+    <string name="ac_setting">关于</string>
 </resources>

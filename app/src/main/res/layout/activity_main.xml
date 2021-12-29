@@ -2,21 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grey_f3f3f3">
 
     <RelativeLayout
         android:id="@+id/main_top_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <TextView
-            android:text="@string/app_name"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
+            android:background="#1698CC"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     </RelativeLayout>
 
@@ -42,8 +41,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/main_morebtn_bg"
-        android:src="@mipmap/more"
-        android:scaleType="centerInside"/>
+        android:scaleType="centerInside"
+        android:src="@mipmap/more" />
 
     <Button
         android:id="@+id/main_btn_edit"

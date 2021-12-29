@@ -1,6 +1,7 @@
 package com.jnu.pocket_book.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter = new AccountAdapter(this, mDatas);
         todayLv.setAdapter(adapter);
 
+        setSupportActionBar(this.<Toolbar>findViewById(R.id.toolbar));
 
     }
      /** 初始化自带的View的方法*/
@@ -212,6 +215,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    boolean isShow = true;
-
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
+//
 }
