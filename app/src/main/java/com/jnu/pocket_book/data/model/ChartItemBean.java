@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.db;
+package com.jnu.pocket_book.data.model;
 
 public class ChartItemBean {
     int sImageId;

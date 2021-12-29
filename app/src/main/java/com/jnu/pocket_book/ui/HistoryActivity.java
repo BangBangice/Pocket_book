@@ -1,4 +1,4 @@
-package com.jnu.pocket_book;
+package com.jnu.pocket_book.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,10 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.AccountAdapter;
-import com.jnu.pocket_book.db.AccountBean;
-import com.jnu.pocket_book.db.DBManager;
-import com.jnu.pocket_book.utils.CalendarDialog;
+import com.jnu.pocket_book.data.model.AccountBean;
+import com.jnu.pocket_book.data.db.DBManager;
+import com.jnu.pocket_book.ui.utils.CalendarDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;

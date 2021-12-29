@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jnu.pocket_book.R;
-import com.jnu.pocket_book.db.AccountBean;
+import com.jnu.pocket_book.data.model.AccountBean;
 
 import java.util.Calendar;
 import java.util.List;

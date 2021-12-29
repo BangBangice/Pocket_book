@@ -1,4 +1,4 @@
-package com.jnu.pocket_book;
+package com.jnu.pocket_book.ui.chart;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,11 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.ChartVPAdapter;
-import com.jnu.pocket_book.db.DBManager;
-import com.jnu.pocket_book.frag_chart.IncomChartFragment;
-import com.jnu.pocket_book.frag_chart.OutcomChartFragment;
-import com.jnu.pocket_book.utils.CalendarDialog;
+import com.jnu.pocket_book.data.db.DBManager;
+import com.jnu.pocket_book.ui.utils.CalendarDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;

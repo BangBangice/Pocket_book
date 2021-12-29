@@ -1,4 +1,4 @@
-package com.jnu.pocket_book;
+package com.jnu.pocket_book.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,11 +18,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.AccountAdapter;
-import com.jnu.pocket_book.db.AccountBean;
-import com.jnu.pocket_book.db.DBManager;
-import com.jnu.pocket_book.utils.BudgetDialog;
-import com.jnu.pocket_book.utils.MoreDialog;
+import com.jnu.pocket_book.data.model.AccountBean;
+import com.jnu.pocket_book.data.db.DBManager;
+import com.jnu.pocket_book.ui.chart.MonthChartActivity;
+import com.jnu.pocket_book.ui.record.RecordActivity;
+import com.jnu.pocket_book.ui.utils.BudgetDialog;
+import com.jnu.pocket_book.ui.utils.MoreDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,7 +33,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView todayLv;  //展示今日收支情况的ListView
-    ImageView searchIv;
     Button editBtn;
     ImageButton moreBtn;
     //声明数据源
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //头布局相关控件
     View headerView;
     TextView topOutTv,topInTv,topbudgetTv,topConTv;
-    ImageView topShowIv;
+
     SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,16 +57,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //设置适配器：加载每一行数据到列表当中
         adapter = new AccountAdapter(this, mDatas);
         todayLv.setAdapter(adapter);
+
+
     }
      /** 初始化自带的View的方法*/
     private void initView() {
         todayLv = findViewById(R.id.main_lv);
         editBtn = findViewById(R.id.main_btn_edit);
         moreBtn = findViewById(R.id.main_btn_more);
-        searchIv = findViewById(R.id.main_iv_search);
         editBtn.setOnClickListener(this);
         moreBtn.setOnClickListener(this);
-        searchIv.setOnClickListener(this);
         setLVLongClickListener();
     }
     /** 设置ListView的长按事件*/
@@ -113,11 +115,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         topInTv = headerView.findViewById(R.id.item_mainlv_top_tv_in);
         topbudgetTv = headerView.findViewById(R.id.item_mainlv_top_tv_budget);
         topConTv = headerView.findViewById(R.id.item_mainlv_top_tv_day);
-        topShowIv = headerView.findViewById(R.id.item_mainlv_top_iv_hide);
+
 
         topbudgetTv.setOnClickListener(this);
         headerView.setOnClickListener(this);
-        topShowIv.setOnClickListener(this);
+
 
     }
     /* 获取今日的具体时间*/
@@ -170,10 +172,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.main_iv_search:
-                Intent it = new Intent(this, SearchActivity.class);  //跳转界面
-                startActivity(it);
-                break;
             case R.id.main_btn_edit:
                 Intent it1 = new Intent(this, RecordActivity.class);  //跳转界面
                 startActivity(it1);
@@ -185,10 +183,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.item_mainlv_top_tv_budget:
                 showBudgetDialog();
-                break;
-            case R.id.item_mainlv_top_iv_hide:
-                // 切换TextView明文和密文
-                toggleShow();
                 break;
         }
         if (v == headerView) {
@@ -219,24 +213,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     boolean isShow = true;
-    /**
-     * 点击头布局眼睛时，如果原来是明文，就加密，如果是密文，就显示出来
-     * */
-    private void toggleShow() {
-        if (isShow) {   //明文====》密文
-            PasswordTransformationMethod passwordMethod = PasswordTransformationMethod.getInstance();
-            topInTv.setTransformationMethod(passwordMethod);   //设置隐藏
-            topOutTv.setTransformationMethod(passwordMethod);   //设置隐藏
-            topbudgetTv.setTransformationMethod(passwordMethod);   //设置隐藏
-            topShowIv.setImageResource(R.mipmap.ih_hide);
-            isShow = false;   //设置标志位为隐藏状态
-        }else{  //密文---》明文
-            HideReturnsTransformationMethod hideMethod = HideReturnsTransformationMethod.getInstance();
-            topInTv.setTransformationMethod(hideMethod);   //设置隐藏
-            topOutTv.setTransformationMethod(hideMethod);   //设置隐藏
-            topbudgetTv.setTransformationMethod(hideMethod);   //设置隐藏
-            topShowIv.setImageResource(R.mipmap.ih_show);
-            isShow = true;   //设置标志位为隐藏状态
-        }
-    }
+
 }

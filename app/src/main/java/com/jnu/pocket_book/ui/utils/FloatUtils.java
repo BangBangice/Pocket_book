@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.utils;
+package com.jnu.pocket_book.ui.utils;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.frag_chart;
+package com.jnu.pocket_book.ui.chart;
 
 
 import android.graphics.Color;
@@ -16,8 +16,8 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ViewPortHandler;
-import com.jnu.pocket_book.db.BarChartItemBean;
-import com.jnu.pocket_book.db.DBManager;
+import com.jnu.pocket_book.data.model.BarChartItemBean;
+import com.jnu.pocket_book.data.db.DBManager;
 
 import java.util.ArrayList;
 import java.util.List;

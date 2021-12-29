@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.db;
+package com.jnu.pocket_book.data.model;
 /*
 * 表示收入或者支出具体类型的类
 * */

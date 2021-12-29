@@ -1,4 +1,4 @@
-package com.jnu.pocket_book;
+package com.jnu.pocket_book.ui.record;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
+import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.RecordPagerAdapter;
-import com.jnu.pocket_book.frag_record.IncomeFragment;
-import com.jnu.pocket_book.frag_record.OutcomeFragment;
+import com.jnu.pocket_book.ui.record.IncomeFragment;
+import com.jnu.pocket_book.ui.record.OutcomeFragment;
 
 import java.util.ArrayList;
 import java.util.List;

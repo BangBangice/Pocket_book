@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.frag_chart;
+package com.jnu.pocket_book.ui.chart;
 
 
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.ChartItemAdapter;
-import com.jnu.pocket_book.db.ChartItemBean;
-import com.jnu.pocket_book.db.DBManager;
+import com.jnu.pocket_book.data.model.ChartItemBean;
+import com.jnu.pocket_book.data.db.DBManager;
 
 import java.util.ArrayList;
 import java.util.List;

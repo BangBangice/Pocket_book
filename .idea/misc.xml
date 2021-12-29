@@ -4,6 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_about.xml" value="0.291213768115942" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_history.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_month_chart.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_record.xml" value="0.26545086119554206" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_search.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/activity_setting.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/dialog_beizhu.xml" value="0.26545086119554206" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/dialog_budget.xml" value="0.26545086119554206" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/dialog_calendar.xml" value="0.26545086119554206" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/dialog_more.xml" value="0.25" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/dialog_time.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/fragment_incom_chart.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_chartfrag_lv.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_chartfrag_top.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_dialogcal_gv.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_dialogcal_hsv.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_mainlv.xml" value="0.47644927536231885" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_mainlv_top.xml" value="0.25" />
+        <entry key="..\:/Android_Dev/Pocket_book/app/src/main/res/layout/item_recordfrag_gv.xml" value="0.17617753623188406" />
       </map>
     </option>
   </component>

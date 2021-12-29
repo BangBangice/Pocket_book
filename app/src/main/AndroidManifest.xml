@@ -10,11 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.jnu.pocket_book.MonthChartActivity"></activity>
-        <activity android:name="com.jnu.pocket_book.HistoryActivity" />
-        <activity android:name="com.jnu.pocket_book.SearchActivity" />
-        <activity android:name="com.jnu.pocket_book.RecordActivity" />
-        <activity android:name="com.jnu.pocket_book.MainActivity">
+        <activity android:name="com.jnu.pocket_book.ui.chart.MonthChartActivity"></activity>
+        <activity android:name="com.jnu.pocket_book.ui.HistoryActivity" />
+        <activity android:name="com.jnu.pocket_book.ui.record.RecordActivity" />
+        <activity android:name="com.jnu.pocket_book.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

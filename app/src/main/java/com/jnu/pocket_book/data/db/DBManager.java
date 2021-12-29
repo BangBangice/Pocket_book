@@ -1,11 +1,15 @@
-package com.jnu.pocket_book.db;
+package com.jnu.pocket_book.data.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.jnu.pocket_book.utils.FloatUtils;
+import com.jnu.pocket_book.data.model.AccountBean;
+import com.jnu.pocket_book.data.model.BarChartItemBean;
+import com.jnu.pocket_book.data.model.ChartItemBean;
+import com.jnu.pocket_book.data.model.TypeBean;
+import com.jnu.pocket_book.ui.utils.FloatUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -166,29 +170,6 @@ public class DBManager {
         int i = db.delete("accounttb", "id=?", new String[]{id + ""});
         return i;
     }
-    /**
-     * 根据备注搜索收入或者支出的情况列表
-     * */
-    public static List<AccountBean>getAccountListByRemarkFromAccounttb(String beizhu){
-        List<AccountBean>list = new ArrayList<>();
-        String sql = "select * from accounttb where beizhu like '%"+beizhu+"%'";
-        Cursor cursor = db.rawQuery(sql, null);
-        while (cursor.moveToNext()) {
-            int id = cursor.getInt(cursor.getColumnIndex("id"));
-            String typename = cursor.getString(cursor.getColumnIndex("typename"));
-            String bz = cursor.getString(cursor.getColumnIndex("beizhu"));
-            String time = cursor.getString(cursor.getColumnIndex("time"));
-            int sImageId = cursor.getInt(cursor.getColumnIndex("sImageId"));
-            int kind = cursor.getInt(cursor.getColumnIndex("kind"));
-            float money = cursor.getFloat(cursor.getColumnIndex("money"));
-            int year = cursor.getInt(cursor.getColumnIndex("year"));
-            int month = cursor.getInt(cursor.getColumnIndex("month"));
-            int day = cursor.getInt(cursor.getColumnIndex("day"));
-            AccountBean accountBean = new AccountBean(id, typename, sImageId, bz, money, time, year, month, day, kind);
-            list.add(accountBean);
-        }
-        return list;
-    }
 
     /**
      * 查询记账的表当中有几个年份信息
@@ -215,7 +196,7 @@ public class DBManager {
     /**
      * 查询指定年份和月份的收入或者支出每一种类型的总钱数
      * */
-    public static List<ChartItemBean>getChartListFromAccounttb(int year,int month,int kind){
+    public static List<ChartItemBean>getChartListFromAccounttb(int year, int month, int kind){
         List<ChartItemBean>list = new ArrayList<>();
         float sumMoneyOneMonth = getSumMoneyOneMonth(year, month, kind);  //求出支出或者收入总钱数
         String sql = "select typename,sImageId,sum(money)as total from accounttb where year=? and month=? and kind=? group by typename " +
@@ -247,7 +228,7 @@ public class DBManager {
     }
 
     /** 根据指定月份每一日收入或者支出的总钱数的集合*/
-    public static List<BarChartItemBean>getSumMoneyOneDayInMonth(int year,int month,int kind){
+    public static List<BarChartItemBean>getSumMoneyOneDayInMonth(int year, int month, int kind){
         String sql = "select day,sum(money) from accounttb where year=? and month=? and kind=? group by day";
         Cursor cursor = db.rawQuery(sql, new String[]{year + "", month + "", kind + ""});
         List<BarChartItemBean>list = new ArrayList<>();

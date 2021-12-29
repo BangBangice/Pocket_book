@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.utils;
+package com.jnu.pocket_book.ui.utils;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
-import com.jnu.pocket_book.HistoryActivity;
-import com.jnu.pocket_book.MonthChartActivity;
+import com.jnu.pocket_book.ui.HistoryActivity;
+import com.jnu.pocket_book.ui.chart.MonthChartActivity;
 import com.jnu.pocket_book.R;
 
 public class MoreDialog extends Dialog implements View.OnClickListener {

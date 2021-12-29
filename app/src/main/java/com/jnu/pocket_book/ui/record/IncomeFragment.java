@@ -1,7 +1,7 @@
-package com.jnu.pocket_book.frag_record;
+package com.jnu.pocket_book.ui.record;
 import com.jnu.pocket_book.R;
-import com.jnu.pocket_book.db.DBManager;
-import com.jnu.pocket_book.db.TypeBean;
+import com.jnu.pocket_book.data.db.DBManager;
+import com.jnu.pocket_book.data.model.TypeBean;
 import java.util.List;
 /**
  * 收入记录页面

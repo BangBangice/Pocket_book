@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.db;
+package com.jnu.pocket_book.data.model;
 /* 用于描述绘制柱状图时，每一个柱子表示的对象*/
 public class BarChartItemBean {
     int year;

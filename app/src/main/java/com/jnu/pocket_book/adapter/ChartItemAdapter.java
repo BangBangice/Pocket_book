@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jnu.pocket_book.R;
-import com.jnu.pocket_book.db.ChartItemBean;
-import com.jnu.pocket_book.utils.FloatUtils;
+import com.jnu.pocket_book.data.model.ChartItemBean;
+import com.jnu.pocket_book.ui.utils.FloatUtils;
 
 import java.util.List;
 

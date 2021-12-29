@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.frag_record;
+package com.jnu.pocket_book.ui.record;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.jnu.pocket_book.R;
-import com.jnu.pocket_book.db.TypeBean;
+import com.jnu.pocket_book.data.model.TypeBean;
 import java.util.List;
 
 public class TypeBaseAdapter extends BaseAdapter {

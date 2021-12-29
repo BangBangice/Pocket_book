@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.frag_record;
+package com.jnu.pocket_book.ui.record;
 import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 
@@ -16,11 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jnu.pocket_book.R;
-import com.jnu.pocket_book.db.AccountBean;
-import com.jnu.pocket_book.db.TypeBean;
-import com.jnu.pocket_book.utils.BeiZhuDialog;
-import com.jnu.pocket_book.utils.KeyBoardUtils;
-import com.jnu.pocket_book.utils.SelectTimeDialog;
+import com.jnu.pocket_book.data.model.AccountBean;
+import com.jnu.pocket_book.data.model.TypeBean;
+import com.jnu.pocket_book.ui.utils.BeiZhuDialog;
+import com.jnu.pocket_book.ui.utils.KeyBoardUtils;
+import com.jnu.pocket_book.ui.utils.SelectTimeDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

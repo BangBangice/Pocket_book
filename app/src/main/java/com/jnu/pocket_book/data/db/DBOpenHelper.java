@@ -1,4 +1,4 @@
-package com.jnu.pocket_book.db;
+package com.jnu.pocket_book.data.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
