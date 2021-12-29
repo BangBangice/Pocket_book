@@ -5,7 +5,7 @@ import android.app.Application;
 import com.jnu.pocket_book.db.DBManager;
 
 /* 表示全局应用的类*/
-public class UniteApp extends Application {
+public class PocketBookApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
@@ -13,3 +13,4 @@ public class UniteApp extends Application {
         DBManager.initDB(getApplicationContext());
     }
 }
+
