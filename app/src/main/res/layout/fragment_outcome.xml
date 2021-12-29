@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_f3f3f3"
-    tools:context=".ui.record.OutcomeFragment">
+    android:background="@color/grey_f3f3f3">
 
     <RelativeLayout
         android:id="@+id/frag_record_rl_top"
@@ -69,14 +68,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
-
         <TextView
             android:id="@+id/frag_record_tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="2020年10月30日 18:49"
             android:layout_alignParentRight="true"
-            android:padding="10dp"
-            android:text="2020年10月30日 18:49" />
+            android:padding="10dp"/>
         <TextView
             android:id="@+id/frag_record_tv_beizhu"
             android:layout_width="match_parent"
