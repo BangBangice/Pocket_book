@@ -22,11 +22,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    //初始化view控件
-    val editBtn: Button = binding.mainBtnEdit
-    var todayLv: ListView = binding.mainLv//展示今日收支情况的ListView
-    var searchIv: ImageView = binding.mainIvSearch
-    var moreBtn: ImageButton = binding.mainBtnMore
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,10 +36,6 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
 
-        editBtn.setOnClickListener {
-            val intent1=Intent(this.context,RecordActivity::class.java)
-            startActivity(intent1)
-        }
 
         return root
     }
