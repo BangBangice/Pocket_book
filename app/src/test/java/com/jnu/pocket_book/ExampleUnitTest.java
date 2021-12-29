@@ -1,4 +1,4 @@
-package com.hui.tally;
+package com.jnu.pocket_book;
 
 import org.junit.Test;
 
