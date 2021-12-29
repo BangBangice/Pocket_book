@@ -1,5 +1,7 @@
 package com.jnu.pocket_book.ui.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +10,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.jnu.pocket_book.PocketBookApplication
 import com.jnu.pocket_book.R
 import com.jnu.pocket_book.databinding.FragmentHomeBinding
+import com.jnu.pocket_book.ui.record.RecordActivity
+
 
 class HomeFragment : Fragment() {
 
@@ -35,6 +40,11 @@ class HomeFragment : Fragment() {
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
+
+        binding.mainBtnEdit.setOnClickListener {
+            val intent1=Intent(this.context,RecordActivity::class.java)
+            startActivity(intent1)
+        }
         return root
     }
 
@@ -42,4 +52,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
