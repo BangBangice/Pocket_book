@@ -10,15 +10,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,7 +25,6 @@ import com.jnu.pocket_book.data.db.DBManager;
 import com.jnu.pocket_book.ui.chart.MonthChartActivity;
 import com.jnu.pocket_book.ui.record.RecordActivity;
 import com.jnu.pocket_book.ui.utils.BudgetDialog;
-import com.jnu.pocket_book.ui.utils.MoreDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -91,9 +86,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /* 弹出是否删除某一条记录的对话框*/
     private void showDeleteItemDialog(final  AccountBean clickBean) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("提示信息").setMessage("您确定要删除这条记录么？")
-                .setNegativeButton("取消",null)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        builder.setTitle("请选择").setMessage("点击删除删除该条账目，点击更改更改该条账目")
+                .setNegativeButton("修改", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int click_id = clickBean.getId();
+                        //执行删除的操作
+                        DBManager.deleteItemFromAccounttbById(click_id);
+                        mDatas.remove(clickBean);   //实时刷新，移除集合当中的对象
+                        adapter.notifyDataSetChanged();   //提示适配器更新数
+                        Intent intent = new Intent();  //跳转界面
+                        intent.setClass(getApplicationContext(), RecordActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setPositiveButton("删除", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int click_id = clickBean.getId();
@@ -178,11 +185,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent it1 = new Intent(this, RecordActivity.class);  //跳转界面
                 startActivity(it1);
                 break;
-//            case R.id.main_btn_more:
-//                MoreDialog moreDialog = new MoreDialog(this);
-//                moreDialog.show();
-//                moreDialog.setDialogSize();
-//                break;
             case R.id.item_mainlv_top_tv_budget:
                 showBudgetDialog();
                 break;
