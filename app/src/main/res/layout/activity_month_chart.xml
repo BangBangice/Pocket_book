@@ -14,13 +14,14 @@
             android:src="@mipmap/it_back"
             android:layout_marginLeft="10dp"
             android:onClick="onClick"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/chart_info"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
         <ImageView
             android:id="@+id/chart_iv_rili"
             android:layout_width="wrap_content"

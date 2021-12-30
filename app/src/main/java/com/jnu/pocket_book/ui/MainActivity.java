@@ -228,11 +228,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent=new Intent();
         if(item.getItemId()==R.id.action_details){
-            intent.setClass(getApplicationContext(), HistoryActivity.class);
+            intent.setClass(getApplicationContext(), MonthChartActivity.class);
             startActivity(intent);
         }
         else{
-            intent.setClass(getApplicationContext(), MonthChartActivity.class);
+            intent.setClass(getApplicationContext(), HistoryActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
