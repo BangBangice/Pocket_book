@@ -1,5 +1,6 @@
 package com.jnu.pocket_book.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -35,7 +37,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView todayLv;  //展示今日收支情况的ListView
-    Button editBtn;
     ImageButton moreBtn;
     //声明数据源
     List<AccountBean>mDatas;
@@ -66,9 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      /** 初始化自带的View的方法*/
     private void initView() {
         todayLv = findViewById(R.id.main_lv);
-        editBtn = findViewById(R.id.main_btn_edit);
         moreBtn = findViewById(R.id.main_btn_more);
-        editBtn.setOnClickListener(this);
         moreBtn.setOnClickListener(this);
         setLVLongClickListener();
     }
@@ -175,15 +174,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.main_btn_edit:
+            case R.id.main_btn_more:
                 Intent it1 = new Intent(this, RecordActivity.class);  //跳转界面
                 startActivity(it1);
                 break;
-            case R.id.main_btn_more:
-                MoreDialog moreDialog = new MoreDialog(this);
-                moreDialog.show();
-                moreDialog.setDialogSize();
-                break;
+//            case R.id.main_btn_more:
+//                MoreDialog moreDialog = new MoreDialog(this);
+//                moreDialog.show();
+//                moreDialog.setDialogSize();
+//                break;
             case R.id.item_mainlv_top_tv_budget:
                 showBudgetDialog();
                 break;
@@ -215,11 +214,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    //右上角的item点击事件
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent=new Intent();
+        if(item.getItemId()==R.id.action_details){
+            intent.setClass(getApplicationContext(), HistoryActivity.class);
+            startActivity(intent);
+        }
+        else{
+            intent.setClass(getApplicationContext(), MonthChartActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
