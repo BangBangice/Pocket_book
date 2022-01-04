@@ -15,7 +15,8 @@
         <activity android:name="com.jnu.pocket_book.ui.record.RecordActivity" />
         <activity
             android:name="com.jnu.pocket_book.ui.MainActivity"
-            android:label="记账">
+            android:label="记账本"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
