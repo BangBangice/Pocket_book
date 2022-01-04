@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.jnu.pocket_book.R;
 import com.jnu.pocket_book.adapter.AccountAdapter;
 import com.jnu.pocket_book.data.model.AccountBean;
 import com.jnu.pocket_book.data.db.DBManager;
+import com.jnu.pocket_book.databinding.ActivityMainBinding;
 import com.jnu.pocket_book.ui.chart.MonthChartActivity;
 import com.jnu.pocket_book.ui.record.RecordActivity;
 import com.jnu.pocket_book.ui.utils.BudgetDialog;
@@ -32,7 +34,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView todayLv;  //展示今日收支情况的ListView
-    ImageButton moreBtn;
+    ImageButton addBtn;
     //声明数据源
     List<AccountBean>mDatas;
     AccountAdapter adapter;
@@ -42,10 +44,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView topOutTv,topInTv,topbudgetTv,topConTv;
 
     SharedPreferences preferences;
+    private ActivityMainBinding activityMainBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        //获取viewbinding
+        activityMainBinding=ActivityMainBinding.inflate(LayoutInflater.from(this));
+        setContentView(activityMainBinding.getRoot());
+
         initTime();
         initView();
         preferences = getSharedPreferences("budget", Context.MODE_PRIVATE);
@@ -56,14 +63,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter = new AccountAdapter(this, mDatas);
         todayLv.setAdapter(adapter);
 
-        setSupportActionBar(this.<Toolbar>findViewById(R.id.toolbar));
+        setSupportActionBar(activityMainBinding.toolbar);
 
     }
      /** 初始化自带的View的方法*/
     private void initView() {
-        todayLv = findViewById(R.id.main_lv);
-        moreBtn = findViewById(R.id.main_btn_more);
-        moreBtn.setOnClickListener(this);
+        todayLv =activityMainBinding.mainLv;
+        addBtn = activityMainBinding.mainBtnMore;
+        addBtn.setOnClickListener(this);
         setLVLongClickListener();
     }
     /** 设置ListView的长按事件*/
