@@ -29,16 +29,16 @@ import com.jnu.pocket_book.ui.HistoryActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    var todayLv //展示今日收支情况的ListView
-            : ListView? = null
-    var addBtn: ImageButton? = null
+    //展示今日收支情况的ListView
+    lateinit var todayLv: ListView
+    lateinit var addBtn: ImageButton
 
     //声明数据源
-    var mDatas: MutableList<AccountBean>? = null
-    var adapter: AccountAdapter? = null
-    var year = 0
-    var month = 0
-    var day = 0
+    lateinit var mDatas: MutableList<AccountBean>
+    lateinit var adapter: AccountAdapter
+     var year=0
+     var month =0
+     var day=0
 
     //头布局相关控件
     var headerView: View? = null
